@@ -14,7 +14,7 @@ app.use(express.json());
 app.use("/api/sms", smsRoute);
 
 app.get("/", (req,res)=>{
-    res.send("Backend  For AET Project Working Fine ");
+    res.send("Backend For AET Project Working Fine ");
 });
 
 mongoose.connect(process.env.MONGO_URI)

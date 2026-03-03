@@ -7,7 +7,8 @@ export const receiveSMS = async (req, res) => {
     if (!sender || !message) {
         return res.status(400).json({ error: "Missing data" });
     }
-
+    console.log("🔥 API HIT");
+    console.log("BODY:", req.body);
     const amount = extractAmount(message);
     const type = detectType(message);
 
@@ -33,9 +34,9 @@ function extractAmount(msg) {
     return match ? Number(match[2].replace(/,/g, "")) : 0;
 }
 
-function detectType(msg){
+function detectType(msg) {
     msg = msg.toLowerCase();
-    if(msg.includes("debited")) return "DEBIT";
-    if(msg.includes("credited")) return "CREDIT";
+    if (msg.includes("debited")) return "DEBIT";
+    if (msg.includes("credited")) return "CREDIT";
     return "UNKNOWN";
 }
