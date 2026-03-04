@@ -44,7 +44,7 @@ import Transaction from "../models/Transaction.models.js";
 
 export const receiveSMS = async (req, res) => {
 
-    console.log("🔥 API HIT");
+    console.log("🔥 API HIT-----");
     console.log("BODY:", req.body);
     try {
         const {
